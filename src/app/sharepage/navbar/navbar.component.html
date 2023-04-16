@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md navbar-light">
+  <a class="navbar-brand" href="#">OneItem</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink=""
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="item" routerLinkActive="active-link"
+          >Item</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="authenticator"
+          routerLinkActive="active-link"
+          >Authenticator</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="history" routerLinkActive="active-link"
+          >History</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="about" routerLinkActive="active-link"
+          >About</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

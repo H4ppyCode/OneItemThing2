@@ -1,0 +1,5 @@
+.footer {
+  border: 2px dashed #000000;
+  margin-top: 20px; /* Add some spacing above the footer */
+  padding: 10px 0; /*  Add some padding inside the footer */
+}

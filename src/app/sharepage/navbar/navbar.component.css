@@ -1,0 +1,10 @@
+.active-link {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.navbar {
+  border: 2px dashed #000000;
+  margin-bottom: 20px; /*  Add some spacing below the navbar */
+  padding: 10px 0; /*  Add some padding inside the footer */
+}
