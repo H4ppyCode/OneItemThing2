@@ -10,6 +10,7 @@ import { ItemComponent } from './pages/item/item.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AuthenticatorComponent } from './pages/authenticator/authenticator.component';
+import { MiddleDirective } from './pages/item/middle.directive';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,11 @@ import { AuthenticatorComponent } from './pages/authenticator/authenticator.comp
     ItemComponent,
     HistoryComponent,
     AboutComponent,
-    AuthenticatorComponent
+    AuthenticatorComponent,
+    MiddleDirective,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
