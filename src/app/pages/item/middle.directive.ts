@@ -1,12 +1,8 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[cardM]',
+selector: '[cardM]',
+host: {
+'style': display: flex; justify-content: center; align-items: center; }
 })
-export class MiddleDirective {
-  constructor(private elementRef: ElementRef<HTMLDivElement>) {
-    this.elementRef.nativeElement.style.display = 'flex';
-    this.elementRef.nativeElement.style.justifyContent = 'center';
-    this.elementRef.nativeElement.style.alignItems = 'center';
-  }
-}
+export class MiddleDirective {}
