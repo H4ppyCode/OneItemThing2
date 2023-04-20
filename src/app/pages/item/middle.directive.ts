@@ -12,7 +12,7 @@ export class MiddleDirective {}
 // Dans ce cas, ce  code peut être plus approprié.
 // import { Directive, ElementRef, OnInit } from '@angular/core';
 
-// @Directive({
+// Directive({
 // selector: '[cardM]',
 // })
 // export class MiddleDirective implements OnInit {
