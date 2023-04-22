@@ -7,3 +7,12 @@
       <input type="submit" (click)="SendToFirebase()">
   </div>
 </div>
+
+<div class="wrapper">
+  <br/>
+  <div class="blog-post" *ngFor="let post of blogpost | async">
+    <h2>{{post.title}}</h2>
+    <p>{{post.body}}</p>
+  </div>
+
+</div>

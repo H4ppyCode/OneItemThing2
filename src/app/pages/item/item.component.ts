@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 export interface blog {title: any, body: any;}
 
@@ -15,10 +16,16 @@ export class ItemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.FeedContent();
   }
 
+  //Var de Send
   title: any;
   body: any;
+
+  //Var de Feed
+  blogpost: Observable<any> | undefined;
+  blogpost_collection: AngularFirestoreCollection<'Blogs'> | undefined;
 
   SendToFirebase(){
 
@@ -32,6 +39,14 @@ export class ItemComponent implements OnInit {
     //Send inputs
     const blog: blog={title,body}
     this.firestore.collection('Blogs').doc(this.title).set(blog);
+  }
+
+
+  FeedContent(){
+
+    this.blogpost_collection = this.firestore.collection('Blogs');
+    this.blogpost = this.blogpost_collection.valueChanges();
+
   }
 
 }
