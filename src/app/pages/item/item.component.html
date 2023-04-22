@@ -1,54 +1,9 @@
-<div cardM>
-  <div class="card" style="width: 50rem">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
-        accusantium iure error, vel assumenda sunt? Beatae nisi quae eius soluta
-        pariatur, illo vel consequatur, odio quibusdam illum temporibus
-        cupiditate eum! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Deserunt numquam alias enim corrupti repellat expedita totam voluptates
-        tempora cum libero quaerat a, maxime dolor amet impedit quod architecto
-        assumenda explicabo minima in harum, voluptatum optio aperiam
-        consequuntur? Ullam, maxime ipsum! Deserunt expedita accusantium ullam
-        quae ipsum. Placeat adipisci nesciunt ad.
-      </p>
-      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-      <div style="text-align: center">
-        <label for="text">Montant saisie :</label>
-        <br />
-        <input type="number" id="text" placeholder="€" />
-        <br />
-        <button type="button" class="btn btn-primary" style="margin-top: 10px">
-          Soumettre
-        </button>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Pseudo</th>
-              <th>Montant €</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>PL</td>
-              <td>5€</td>
-            </tr>
-            <tr>
-              <td>Atreus</td>
-              <td>10M</td>
-            </tr>
-            <tr>
-              <td>Louis</td>
-              <td>20M</td>
-            </tr>
-            <tr>
-              <td>Row 4, Column 1</td>
-              <td>Row 4, Column 2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+<div class="Wrapper">
+
+  <label>Blog Input</label>
+  <div>
+      <input [(ngModel)]="title" type="text" placeholder="Title">
+      <input [(ngModel)]="body" type="textarea" placeholder="Body">
+      <input type="submit" (click)="SendToFirebase()">
   </div>
 </div>

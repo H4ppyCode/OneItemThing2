@@ -23,6 +23,10 @@ import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 
+import { FormsModule } from '@angular/forms';
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,22 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     AuthenticatorComponent,
     MiddleDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAnalytics(() => getAnalytics()), provideAuth(() => getAuth()), provideDatabase(() => getDatabase()), provideFirestore(() => getFirestore()), provideFunctions(() => getFunctions()), provideMessaging(() => getMessaging()), providePerformance(() => getPerformance()), provideRemoteConfig(() => getRemoteConfig()), provideStorage(() => getStorage())],
+  imports: [BrowserModule, 
+    AppRoutingModule, 
+    provideFirebaseApp(() => initializeApp(environment.firebase)), 
+    provideAnalytics(() => getAnalytics()), 
+    provideAuth(() => getAuth()), 
+    provideDatabase(() => getDatabase()), 
+    provideFirestore(() => getFirestore()), 
+    provideFunctions(() => getFunctions()), 
+    provideMessaging(() => getMessaging()), 
+    providePerformance(() => getPerformance()), 
+    provideRemoteConfig(() => getRemoteConfig()), 
+    provideStorage(() => getStorage()),
+    FormsModule,
+    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase)
+  ],
   providers: [
     ScreenTrackingService,UserTrackingService
   ],
