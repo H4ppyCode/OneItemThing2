@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "oneitemback": {
+      "hosting": {
+        "oneitem": [
+          "oneitemback"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "oneitemback"
+  }
+}
