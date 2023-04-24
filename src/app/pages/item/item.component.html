@@ -1,18 +1,53 @@
-<div class="Wrapper">
-
-  <label>Blog Input</label>
-  <div>
-      <input [(ngModel)]="title" type="text" placeholder="Title">
-      <input [(ngModel)]="body" type="textarea" placeholder="Body">
-      <input type="submit" (click)="SendToFirebase()">
+<div cardM>
+  <div class="card" style="width: 50rem">
+    <div class="card-body">
+      <h5 class="card-title">Bid on the item :</h5>
+      <p class="card-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
+        accusantium iure error, vel assumenda sunt? Beatae nisi quae eius soluta
+        pariatur, illo vel consequatur, odio quibusdam illum temporibus
+        cupiditate eum! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Deserunt numquam alias enim corrupti repellat expedita totam voluptates
+        tempora cum libero quaerat a, maxime dolor amet impedit quod architecto
+        assumenda explicabo minima in harum, voluptatum optio aperiam
+        consequuntur? Ullam, maxime ipsum! Deserunt expedita accusantium ullam
+        quae ipsum. Placeat adipisci nesciunt ad.
+      </p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <div style="text-align: center">
+        <label for="text">Your Pseudo :</label>
+        <br />
+        <input [(ngModel)]="pseudo" type="textarea" placeholder="Pseudo">
+        <br />
+        <label for="text">Your Email :</label>
+        <br />
+        <input [(ngModel)]="email" type="email" placeholder="Email">
+        <br />
+        <label for="text">Your Sum :</label>
+        <br />
+        <input [(ngModel)]="sum" type="number" placeholder="Sum in $">
+        <br />
+        <button type="button" class="btn btn-primary" style="margin-top: 10px" (click)="SendToFirebase()">
+          Submit
+        </button>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Pseudo</th>
+              <th>Sum $</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of item | async">
+              <td>{{post.pseudo}}</td>
+              <td>{{post.sum}} $</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
-
-<div class="wrapper">
-  <br/>
-  <div class="blog-post" *ngFor="let post of blogpost | async">
-    <h2>{{post.title}}</h2>
-    <p>{{post.body}}</p>
-  </div>
-
-</div>
+<br/>
+<br/>
+<br/>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
-export interface blog {title: any, body: any;}
+export interface blog {pseudo: any, email: any; sum: any}
 
 @Component({
   selector: 'app-item',
@@ -20,32 +20,35 @@ export class ItemComponent implements OnInit {
   }
 
   //Var de Send
-  title: any;
-  body: any;
+  pseudo: any;
+  email: any;
+  sum: any;
 
   //Var de Feed
-  blogpost: Observable<any> | undefined;
-  blogpost_collection: AngularFirestoreCollection<'Blogs'> | undefined;
+  item: Observable<any> | undefined;
+  item_collection: AngularFirestoreCollection<'Item0'> | undefined;
 
   SendToFirebase(){
 
     //Collect inputs
-    const title: any = this.title
-    const body: any = this.body
+    const pseudo: any = this.pseudo
+    const email: any = this.email
+    const sum: any = this.sum
 
-    console.log(title)
-    console.log(body)
+    console.log(pseudo)
+    console.log(email)
+    console.log(sum)
 
     //Send inputs
-    const blog: blog={title,body}
-    this.firestore.collection('Blogs').doc(this.title).set(blog);
+    const blog: blog={pseudo,email,sum}
+    this.firestore.collection('Item0').doc(this.email).set(blog);
   }
 
 
   FeedContent(){
 
-    this.blogpost_collection = this.firestore.collection('Blogs');
-    this.blogpost = this.blogpost_collection.valueChanges();
+    this.item_collection = this.firestore.collection('Item0', ref => ref.orderBy('sum', 'desc'));
+    this.item = this.item_collection.valueChanges();
 
   }
 
