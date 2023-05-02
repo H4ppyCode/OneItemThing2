@@ -12,7 +12,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { AuthenticatorComponent } from './pages/authenticator/authenticator.component';
 import { MiddleDirective } from './pages/item/middle.directive';
 import { ListUsersComponent } from './pages/item/list-users/list-users.component';
-
+import { LoginComponent } from './pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +26,9 @@ import { ListUsersComponent } from './pages/item/list-users/list-users.component
     AuthenticatorComponent,
     MiddleDirective,
     ListUsersComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

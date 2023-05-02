@@ -5,6 +5,7 @@ import { ItemComponent } from './pages/item/item.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AuthenticatorComponent } from './pages/authenticator/authenticator.component';
 import { HistoryComponent } from './pages/history/history.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
@@ -12,8 +13,8 @@ const routes: Routes = [
   { path: 'history', component: HistoryComponent },
   { path: 'home', component: HomeComponent },
   { path: 'item', component: ItemComponent },
-  { path: '', component: HomeComponent }
- 
+  { path: 'login', component: LoginComponent },
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
