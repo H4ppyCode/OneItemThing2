@@ -11,6 +11,7 @@ import { HistoryComponent } from './pages/history/history.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AuthenticatorComponent } from './pages/authenticator/authenticator.component';
 import { MiddleDirective } from './pages/item/middle.directive';
+import { ListUsersComponent } from './pages/item/list-users/list-users.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MiddleDirective } from './pages/item/middle.directive';
     AboutComponent,
     AuthenticatorComponent,
     MiddleDirective,
+    ListUsersComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
