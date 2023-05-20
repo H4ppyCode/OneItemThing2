@@ -35,13 +35,14 @@ export class ItemComponent implements OnInit {
     const email: any = this.email
     const sum: any = this.sum
 
-    console.log(pseudo)
-    console.log(email)
-    console.log(sum)
+    //console.log(pseudo)
+    //console.log(email)
+    //console.log(sum)
 
     //Send inputs
     const blog: blog={pseudo,email,sum}
     this.firestore.collection('Item0').doc(this.email).set(blog);
+
   }
 
 
@@ -51,5 +52,7 @@ export class ItemComponent implements OnInit {
     this.item = this.item_collection.valueChanges();
 
   }
+
+  
 
 }
