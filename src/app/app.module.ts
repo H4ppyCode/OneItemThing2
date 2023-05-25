@@ -14,6 +14,10 @@ import { MiddleDirective } from './pages/item/middle.directive';
 import { ListUsersComponent } from './pages/item/list-users/list-users.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CryptApiComponent } from './crypt-api/crypt-api.component';
+import { LeftDirective } from './crypt-api/left.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +31,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MiddleDirective,
     ListUsersComponent,
     LoginComponent,
+    CryptApiComponent,
+    LeftDirective,
+    
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule ,HttpClientModule, NgChartsModule ],
   providers: [],
   bootstrap: [AppComponent],
 })

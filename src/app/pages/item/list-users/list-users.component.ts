@@ -16,7 +16,7 @@ export class ListUsersComponent {
     } else {
       this.items = [
         { pseudo: 'PL', montant: '5€' },
-        { pseudo: 'Atreus', montant: '10M' },
+        { pseudo: 'Atreus', montant: '10€' },
       ];
     }
   }

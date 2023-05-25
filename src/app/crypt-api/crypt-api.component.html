@@ -1,0 +1,25 @@
+<div cardM>
+  <div class="card" style="width: 50rem">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text"></p>
+
+      <p *ngIf="priceData">
+        Le cours du Bitcoin est de : {{ price }} €
+      </p>
+      <p *ngIf="error">{{ error }}</p>
+
+      <div style="display: block">
+        <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          >
+          
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
