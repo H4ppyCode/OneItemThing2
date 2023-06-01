@@ -21,17 +21,22 @@ export class CryptApiComponent {
       )
       .subscribe(
         (response) => {
-          const btcData = response.prices; // Tableau des prix [timestamp, prix]
+       const btcData = response.prices; // Tableau des prix [timestamp, prix]
 
-          const labels = btcData.map((data: (string | number | Date)[]) => {
-            const date = new Date(data[0]);
-            const month = date.toLocaleString('default', { month: 'long' });
-            const year = date.getFullYear();
-            return `${month} ${year}`;
-          });
+        const labels = [];
+        const prices = [];
 
-          const prices = btcData.map((data: any[]) => data[1]);
+        for (let i = 0; i < btcData.length; i += 30) {
+          const data = btcData[i];
+          const date = new Date(data[0]);
+          const month = date.toLocaleString('default', { month: 'long' });
+          const year = date.getFullYear();
+          const label = `${month} ${year}`;
+          const price = data[1];
 
+          labels.push(label);
+          prices.push(price);
+        }
           this.btcChart = new Chart('btcChart', {
             type: 'line',
             data: {
