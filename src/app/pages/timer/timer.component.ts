@@ -10,15 +10,22 @@ export class TimerComponent {
   intervalId: any;
 
   ngOnInit() {
+    this.calculateCountDown();
     this.startTimer();
   }
 
+  calculateCountDown() {
+    const now = new Date();
+    const tomorrow = new Date(now);
+    tomorrow.setDate(now.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0); // fixe l'heure à minuit
+    this.countDown = Math.ceil((tomorrow.getTime() - now.getTime()) / 1000); // le décompte est en secondes
+  }
+
   startTimer() {
-    // 24h en secondes
-    this.countDown = 24 * 60 * 60;
     this.intervalId = setInterval(() => {
       this.countDown--;
-      if (this.countDown === 0) {
+      if (this.countDown <= 0) {
         clearInterval(this.intervalId);
       }
     }, 1000);
