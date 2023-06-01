@@ -24,7 +24,7 @@ export class TimerComponent {
     }, 1000);
   }
 
-  get hours(): number {
+  get heures(): number {
     return Math.floor(this.countDown / 3600);
   }
 
@@ -32,7 +32,7 @@ export class TimerComponent {
     return Math.floor((this.countDown % 3600) / 60);
   }
 
-  get seconds(): number {
+  get secondes(): number {
     return this.countDown % 60;
   }
 }
