@@ -10,15 +10,8 @@
       <p *ngIf="error">{{ error }}</p>
 
       <div style="display: block">
-        <canvas
-          baseChart
-          [datasets]="barChartData"
-          [labels]="barChartLabels"
-          [options]="barChartOptions"
-          [legend]="barChartLegend"
-          >
-          
-        </canvas>
+      <canvas id="btcChart"></canvas>
+
       </div>
     </div>
   </div>
