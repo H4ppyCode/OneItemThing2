@@ -18,7 +18,7 @@ import { MiddleDirective } from './pages/item/middle.directive';
 import { ListUsersComponent } from './pages/item/list-users/list-users.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CryptApiComponent } from './crypt-api/crypt-api.component';
-import { LeftDirective } from './crypt-api/left.directive';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -34,17 +34,17 @@ import { LeftDirective } from './crypt-api/left.directive';
     ListUsersComponent,
     LoginComponent,
     CryptApiComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule, // Add ReactiveFormsModule to the imports array
+    ReactiveFormsModule,
     HttpClientModule,
     NgChartsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

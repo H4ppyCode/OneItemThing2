@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CryptApiComponent } from './crypt-api.component';
 
 describe('CryptApiComponent', () => {

@@ -40,7 +40,7 @@ export class CryptApiComponent {
       },
       (error) => {
         this.error =
-          "Une erreur s'est produite lors de la récupération des données.";
+          "Une erreur s'est produite lors de la récupération des données via API.";
         console.error(error);
       }
     );
