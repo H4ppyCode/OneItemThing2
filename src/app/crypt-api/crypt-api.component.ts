@@ -43,7 +43,7 @@ export class CryptApiComponent {
               labels: labels,
               datasets: [
                 {
-                  label: 'BTC Price',
+                  label: 'BTC Prix €',
                   data: prices,
                   borderColor: 'blue',
                   fill: false,
@@ -57,6 +57,8 @@ export class CryptApiComponent {
         },
         (error) => {
           console.error(error);
+           this.error =
+            "Une erreur s'est produite lors de la récupération des données via API pour graphique.";
         }
       );
 
@@ -69,7 +71,7 @@ export class CryptApiComponent {
         },
         (error) => {
           this.error =
-            "Une erreur s'est produite lors de la récupération des données via API.";
+            "Une erreur s'est produite lors de la récupération des données via API pour le prix actuel.";
           console.error(error);
         }
       );

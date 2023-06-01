@@ -1,0 +1,15 @@
+<div cardM>
+  <div class="card" style="width: 50rem">
+    <div class="card-body">
+      <div *ngIf="countDown > 0">
+        <h3>
+          Temps restant : {{ hours }} heures, {{ minutes }} minutes,
+          {{ seconds }} secondes
+        </h3>
+      </div>
+      <div *ngIf="countDown === 0">
+        <h1>Le temps est écoulé !</h1>
+      </div>
+    </div>
+  </div>
+</div>

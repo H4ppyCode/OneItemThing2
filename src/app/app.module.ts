@@ -19,6 +19,7 @@ import { ListUsersComponent } from './pages/item/list-users/list-users.component
 import { LoginComponent } from './pages/login/login.component';
 import { CryptApiComponent } from './crypt-api/crypt-api.component';
 import { RouterModule } from '@angular/router';
+import { TimerComponent } from './pages/timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RouterModule } from '@angular/router';
     ListUsersComponent,
     LoginComponent,
     CryptApiComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,

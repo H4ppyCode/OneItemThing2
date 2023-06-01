@@ -9,6 +9,6 @@ export class MiddleDirective {
     this.elementRef.nativeElement.style.justifyContent = 'space-between';
     this.elementRef.nativeElement.style.alignItems = 'center';
     //use padding 25px
-    this.elementRef.nativeElement.style.padding = '45px';
+    this.elementRef.nativeElement.style.padding = '35px';
   }
 }
