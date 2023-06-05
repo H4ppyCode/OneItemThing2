@@ -1,48 +1,44 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { LocalStorage } from '@ngx-pwa/local-storage';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-
+export class LoginComponent {
+  email: string = '';
+  password: string = '';
   loginForm: FormGroup;
-  isLoggedIn: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private localStorage: LocalStorage) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
-  ngOnInit(): void {
-  }
-
   onSubmit(): void {
     if (this.loginForm.valid) {
-      const emailControl = this.loginForm.get('email');
-      const passwordControl = this.loginForm.get('password');
+      // @ts-ignore
+      this.email = this.loginForm.get('email').value;
+      // @ts-ignore
+      this.password = this.loginForm.get('password').value;
 
-      if (emailControl && passwordControl) {
+      const credentials = { email: this.email, password: this.password };
 
-        const email = emailControl.value;
-        const password = passwordControl.value;
-
-        if (email === 'email@example.com' && password === 'password') {
-          this.isLoggedIn = true;
-          console.log('Connexion réussie!');
-          alert("connexion réussie")
-        } else {
-          this.isLoggedIn = false;
-          console.log('Identifiants invalides.');
-        }
-
-        console.log('Email:', email);
-        console.log('Mot de passe:', password);
-      }
+      this.http.post('http://localhost:3000/login', credentials)
+        .subscribe((response: any) => {
+          if (response.success) {
+            this.localStorage.setItem('isLoggedIn', true).subscribe(() => {
+              console.log('Authentication successful');
+            });
+          } else {
+            console.log('Invalid credentials');
+          }
+        });
     }
   }
 }

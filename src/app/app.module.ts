@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'; // Import ReactiveFormsModule
 import { NgChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,15 +37,16 @@ import { TimerComponent } from './pages/timer/timer.component';
     CryptApiComponent,
     TimerComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgChartsModule,
-    BrowserAnimationsModule,
-    RouterModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgChartsModule,
+        BrowserAnimationsModule,
+        RouterModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })
