@@ -1,3 +1,7 @@
+Welcome to OneItem. 
+This website sells a limited quantity of a unique and handmade item periodically. To acquire them, users must bid using a system that allows the top X bidders to win the item at the end of the sale period
+
+
 # Oneitem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
